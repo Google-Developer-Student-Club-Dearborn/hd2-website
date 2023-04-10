@@ -9,8 +9,13 @@ ground zero for Hack Dearborn 2
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+First make sure to install dependencies using 
 
-First, run the development server:
+```sh
+bun install
+```
+
+Then you can run the development server:
 
 ```bash
 bun run dev

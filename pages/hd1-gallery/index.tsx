@@ -1,7 +1,7 @@
-import dynamic from "next/dynamic"
+import dynamic from "next/dynamic";
 
 const Carousel = dynamic(() => import("../../components/Carousel"), {
-  ssr: false,
-})
+	ssr: false,
+});
 
-export default Carousel
+export default Carousel;

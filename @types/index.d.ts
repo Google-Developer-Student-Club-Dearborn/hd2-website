@@ -1,4 +1,4 @@
 type Image = {
-  url: string
-  alt: string
-}
+	url: string;
+	alt: string;
+};

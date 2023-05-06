@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Events } from "react-scroll";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -7,7 +7,6 @@ import useSound from 'use-sound';
 import { delay } from "framer-motion";
 
 const Rain = dynamic(() => import("../components/Rain"), { ssr: false });
-
 
 function NavBar({ pages }: { pages: string[] }) {
 	return (
@@ -35,23 +34,23 @@ export default function Home() {
 	useEffect(() => {
 		const handleScroll = () => {
 			if (backgroundRef.current) {
-			  const scrollPosition = window.scrollY;
-			  const newScale = Math.max(0.1, 1 - scrollPosition / 1000);
-			  setBgImageScale(newScale);
-			  
-			  // Update rainZIndex based on scroll position
-			  if (scrollPosition > 300) {
-				setRainZIndex(0);
-				setBgZIndex(1);
-			  } else {
-				setRainZIndex(1);
-				setBgZIndex(0);
-			  }
+				const scrollPosition = window.scrollY;
+				const newScale = Math.max(0.1, 1 - scrollPosition / 1000);
+				setBgImageScale(newScale);
+
+				// Update rainZIndex based on scroll position
+				if (scrollPosition > 300) {
+					setRainZIndex(0);
+					setBgZIndex(1);
+				} else {
+					setRainZIndex(1);
+					setBgZIndex(0);
+				}
 			}
-		  };
-		  
-		Events.scrollEvent.register("begin",handleScroll);
-		Events.scrollEvent.register("end",handleScroll);
+		};
+
+		Events.scrollEvent.register("begin", handleScroll);
+		Events.scrollEvent.register("end", handleScroll);
 		window.addEventListener("scroll", handleScroll);
 
 		return () => {
@@ -143,12 +142,11 @@ export default function Home() {
 				</div>
 				
 				<NavBar pages={pages} />
-				<div className="extra-content" style={{ minHeight: "200vh" }}>
-				</div>
+				<div className="extra-content" style={{ minHeight: "200vh" }}></div>
 				<div className="laptop-wrapper">
-				<div className="laptop-container">
-					<Image src={laptopSvg} alt="Laptop" />
-				</div>
+					<div className="laptop-container">
+						<Image src={laptopSvg} alt="Laptop" />
+					</div>
 				</div>
 			</main>
 		</>

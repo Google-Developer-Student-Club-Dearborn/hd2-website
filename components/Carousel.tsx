@@ -31,7 +31,10 @@ function ImageGallery() {
 				goToSlide={goToSlide}
 				offsetRadius={offsetRadius}
 				showNavigation={showNavigation}
-				animationConfig={config.slow}
+				animationConfig={{
+					tension: 200,
+					friction: 15,
+				}}
 			/>
 		</div>
 	);
